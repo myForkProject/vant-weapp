@@ -44,6 +44,14 @@ VantComponent({
       type: Boolean,
       value: true,
     },
+    clearTrigger: {
+      type: String,
+      value: 'focus',
+    },
+    clearIcon: {
+      type: String,
+      value: 'clear',
+    },
   },
 
   methods: {
@@ -84,8 +92,8 @@ VantComponent({
       this.$emit('clear', event.detail);
     },
 
-    onClickInput: function (event) {
+    onClickInput(event) {
       this.$emit('click-input', event.detail);
-    },    
+    },
   },
 });

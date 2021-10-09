@@ -47,6 +47,10 @@ VantComponent({
       type: String,
       value: '确定',
     },
+    confirmDisabledText: {
+      type: String,
+      value: '确定',
+    },
     rangePrompt: String,
     showRangePrompt: {
       type: Boolean,
@@ -60,18 +64,17 @@ VantComponent({
       },
     },
     allowSameDay: Boolean,
-    confirmDisabledText: String,
     type: {
       type: String,
       value: 'single',
       observer: 'reset',
     },
     minDate: {
-      type: null,
+      type: Number,
       value: initialMinDate,
     },
     maxDate: {
-      type: null,
+      type: Number,
       value: initialMaxDate,
     },
     position: {
@@ -122,6 +125,7 @@ VantComponent({
       type: Number,
       value: 0,
     },
+    readonly: Boolean,
   },
 
   data: {
@@ -132,7 +136,7 @@ VantComponent({
 
   created() {
     this.setData({
-      currentDate: this.getInitialDate(),
+      currentDate: this.getInitialDate(this.data.defaultDate),
     });
   },
 
@@ -201,11 +205,11 @@ VantComponent({
         const start = this.limitDateRange(
           startDay || now,
           minDate,
-          getPrevDay(maxDate).getTime()
+          getPrevDay(new Date(maxDate)).getTime()
         );
         const end = this.limitDateRange(
           endDay || now,
-          getNextDay(minDate).getTime()
+          getNextDay(new Date(minDate)).getTime()
         );
         return [start, end];
       }
@@ -271,6 +275,10 @@ VantComponent({
     },
 
     onClickDay(event) {
+      if (this.data.readonly) {
+        return;
+      }
+      
       const { date } = event.detail;
       const { type, currentDate, allowSameDay } = this.data;
 
@@ -365,7 +373,6 @@ VantComponent({
       if (maxRange && calcDateNum(date) > maxRange) {
         if (showRangePrompt) {
           Toast({
-            duration: 0,
             context: this,
             message: rangePrompt || `选择天数不能超过 ${maxRange} 天`,
           });
@@ -389,6 +396,10 @@ VantComponent({
         // @ts-ignore
         this.$emit('confirm', copyDates(this.data.currentDate));
       });
+    },
+
+    onClickSubtitle(event: WechatMiniprogram.TouchEvent) {
+      this.$emit('click-subtitle', event);
     },
   },
 });

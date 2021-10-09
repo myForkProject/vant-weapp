@@ -49,10 +49,6 @@ VantComponent({
       type: null,
       value: 0,
       observer(name) {
-        if (!this.skipInit) {
-          this.skipInit = true;
-        }
-
         if (name !== this.getCurrentName()) {
           this.setCurrentIndexByName(name);
         }
@@ -106,14 +102,13 @@ VantComponent({
 
   mounted() {
     requestAnimationFrame(() => {
+      this.swiping = true;
       this.setData({
         container: () => this.createSelectorQuery().select('.van-tabs'),
       });
 
-      if (!this.skipInit) {
-        this.resize();
-        this.scrollIntoView();
-      }
+      this.resize();
+      this.scrollIntoView();
     });
   },
 
@@ -244,6 +239,7 @@ VantComponent({
           (rect.width - lineRect.width) / 2 + (ellipsis ? 0 : 8);
 
         this.setData({ lineOffsetLeft });
+        this.swiping = true;
 
         if (skipTransition) {
           nextTick(() => {
@@ -293,14 +289,14 @@ VantComponent({
     },
 
     onTouchMove(event: WechatMiniprogram.TouchEvent) {
-      if (!this.data.swipeable) return;
+      if (!this.data.swipeable || !this.swiping) return;
 
       this.touchMove(event);
     },
 
     // watch swipe touch end
     onTouchEnd() {
-      if (!this.data.swipeable) return;
+      if (!this.data.swipeable || !this.swiping) return;
 
       const { direction, deltaX, offsetX } = this;
       const minSwipeDistance = 50;
@@ -311,6 +307,8 @@ VantComponent({
           this.setCurrentIndex(index);
         }
       }
+
+      this.swiping = false;
     },
 
     getAvaiableTab(direction: number) {

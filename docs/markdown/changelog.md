@@ -1,18 +1,155 @@
 # 更新日志
 
+### [v1.9.1](https://github.com/youzan/vant-weapp/compare/v1.9.0...v1.9.1)
 
-### [1.7.2](https://github.com/youzan/vant-weapp/tree/v1.7.2)
+`2021-09-29`
+
+**Bug Fixes**
+
+- CheckBox: 移除无用方法 [#4527](https://github.com/youzan/vant-weapp/issues/4527)
+- Slider: 修复 vertical 属性导致点击无效问题 [#4532](https://github.com/youzan/vant-weapp/issues/4532)
+
+**Document**
+
+- Calendar: Day 数据结构增加 className 属性说明 [#4524](https://github.com/youzan/vant-weapp/issues/4524)
+
+**Feature**
+
+- Calendar: 增加 readonly 属性 [#4529](https://github.com/youzan/vant-weapp/issues/4529)
+
+### [v1.9.0](https://github.com/youzan/vant-weapp/compare/v1.8.7...v1.9.0)
+
+`2021-09-27`
+
+**Bug Fixes**
+
+- Slider: 移除 theme mixin [#4520](https://github.com/youzan/vant-weapp/issues/4520)
+- Tab: 修复初始位置不正确问题 [#4521](https://github.com/youzan/vant-weapp/issues/4521)
+
+**Document**
+
+- ActionSheet: 添加 show 属性说明 [#4518](https://github.com/youzan/vant-weapp/issues/4518)
+
+**Feature**
+
+- Slider: 添加 vertical 属性 [#4486](https://github.com/youzan/vant-weapp/issues/4486)
+
+**Performance**
+
+- 移除 CSS variables 兼容代码 [#4487](https://github.com/youzan/vant-weapp/issues/4487)
+
+### [v1.8.7](https://github.com/youzan/vant-weapp/compare/v1.8.6...v1.8.7)
+
+`2021-09-22`
+
+**Features**
+
+- Icons: 新增 guide-o 图标 [#4507](https://github.com/youzan/vant-weapp/issues/4507)
+
+### [1.8.6](https://github.com/youzan/vant-weapp/compare/v1.8.5...v1.8.6)
+
+`2021-09-20`
+
+**Features**
+
+- Calendar: 新增 confirmDisabledText 默认文案 [#4490](https://github.com/youzan/vant-weapp/issues/4490)) ([8629da1](https://github.com/youzan/vant-weapp/commit/8629da1b75bb50e2f0a99905de90fd85015fb785)
+
+**Bug Fixes**
+
+- 移除 optionalTypes [#4501](https://github.com/youzan/vant-weapp/issues/4501)) ([3afe10c](https://github.com/youzan/vant-weapp/commit/3afe10c0f929e5c6b0f32ca34de9dc8d05c8c016)
+- Docs: 修复文档错误 [#4489](https://github.com/youzan/vant-weapp/issues/4489)
+
+### [1.8.5](https://github.com/youzan/vant-weapp/compare/v1.8.4...v1.8.5)
+
+`2021-09-15`
+
+**Bug Fixes**
+
+- Calendar: 修复超出选择范围 toast 提示一直存在问题 [#4474](https://github.com/youzan/vant-weapp/issues/4474)
+- page-scroll: 修复 isDef 取反问题 [#4488](https://github.com/youzan/vant-weapp/issues/4488)
+
+### [1.8.4](https://github.com/youzan/vant-weapp/compare/v1.8.3...v1.8.4)
+
+`2021-09-07`
+
+**Bug Fixes**
+
+- page-scroll: 修复 getCurrentPage 为空时报错 [#4458](https://github.com/youzan/vant-weapp/issues/4458)
+
+**Features**
+
+- Field: 新增 clear-trigger 属性 [#4461](https://github.com/youzan/vant-weapp/issues/4461)
+- Search: 新增 clear-icon 属性 [#4463](https://github.com/youzan/vant-weapp/issues/4463)
+- Search: 新增 clear-trigger 属性 [9e17b13](https://github.com/youzan/vant-weapp/commit/9e17b13164e57ff09140d755870853f702a89a39)
+- Slider: 新增 range 属性 [#4442](https://github.com/youzan/vant-weapp/issues/4442)
+
+### [v1.8.3](https://github.com/youzan/vant-weapp/compare/v1.8.2...v1.8.3)
+
+`2021-08-30`
+
+**Bug Fixes**
+
+- Calendar: 修复 default-date 属性失效问题 [#4430](https://github.com/youzan/vant-weapp/issues/4430)
+- ShareSheet: 调整 overlayStyle 属性类型为 string [8c408e2](https://github.com/youzan/vant-weapp/commit/8c408e23030e65a0baf62f0b21fb8ed3f2c9df67)
+- Stepper: 调整 minus/plus slots 位置 [#4427](https://github.com/youzan/vant-weapp/issues/4427)
+- Sticky: 修复 root 为 null 时，读取 root.top 报错问题 [#4433](https://github.com/youzan/vant-weapp/issues/4433)
+- Calendar: 调整 minDate 和 maxDate 传值类型为 Number [37d8e69](https://github.com/youzan/vant-weapp/commit/37d8e697c9e3d985b926f68553b8afbb5c0a0569)
+
+**Features**
+
+- Popup: 新增 lock-scroll 属性 [#4384](https://github.com/youzan/vant-weapp/issues/4384)
+
+**Performance Improvements**
+
+- Radio: label 的 margin-left 改为 padding-left，增大可点击区域，增强用户体验 [#4165](https://github.com/youzan/vant-weapp/issues/4165)
+
+### [v1.8.2](https://github.com/youzan/vant-weapp/compare/v1.8.1...v1.8.2)
+
+`2021-08-18`
+
+**Bug Fixes**
+
+- Calendar: 修复 template 引用路径不是相对路径的问题 [7f7cf6](https://github.com/youzan/vant-weapp/commit/7f7cf62ee0f675ad6b86d41f70b23336e7ddc7a1)
+- Field: 修复 template 引用路径不是相对路径的问题 [6dd42a](https://github.com/youzan/vant-weapp/commit/6dd42a0473578e26e5f5f96158959e56689f68b6)
+
+### [v1.8.1](https://github.com/youzan/vant-weapp/compare/v1.8.0...v1.8.1)
+
+`2021-08-18`
+
+**Feature**
+
+- Calendar: 新增 click-subtitle 事件 [#4385](https://github.com/youzan/vant-weapp/issues/4385)
+- Circle: 使用 setTimeout 代替 setInterval [#4401](https://github.com/youzan/vant-weapp/issues/4401)
+
+**Bug Fixes**
+
+- Picker: 修复 template 引用路径不是相对路径的问题 [#4408](https://github.com/youzan/vant-weapp/issues/4408)
+
+### [v1.8.0](https://github.com/youzan/vant-weapp/compare/v1.7.2...v1.8.0)
+
+`2021-08-11`
+
+**Feature**
+
+- Overlay: 新增 lock-scroll 属性 [#4383](https://github.com/youzan/vant-weapp/issues/4383)
+- search: 新增 click-input 事件 [#4357](https://github.com/youzan/vant-weapp/issues/4357)
+
+**Performance**
+
+- 移除了 iOS8 相关的 polyfill，减少包体积 [#4395](https://github.com/youzan/vant-weapp/issues/4395)
+
+### [v1.7.2](https://github.com/youzan/vant-weapp/compare/v1.7.1...v1.7.2)
 
 `2021-07-19`
 
 **Bug Fixes**
 
- - Calendar: 初始日期设置为当前日期 [#4339](https://github.com/youzan/vant-weapp/issues/4339)
+- Calendar: 初始日期设置为当前日期 [#4339](https://github.com/youzan/vant-weapp/issues/4339)
 
 **Features**
 
- - Cell: CellGroup 新增 inset 属性 [#4341](https://github.com/youzan/vant-weapp/issues/4341)
- - Search: 新增click-input 事件 [#4337](https://github.com/youzan/vant-weapp/issues/4337)
+- Cell: CellGroup 新增 inset 属性 [#4341](https://github.com/youzan/vant-weapp/issues/4341)
+- Search: 新增 click-input 事件 [#4337](https://github.com/youzan/vant-weapp/issues/4337)
 
 ### [1.7.1](https://github.com/youzan/vant-weapp/tree/v1.7.1)
 
@@ -31,7 +168,7 @@
 **Bug Fixes**
 
 - Button: 修复 type 为 getUserInfo & wx.getUserProfile 可用时 lang 参数失效 [#4250](https://github.com/youzan/vant-weapp/issues/4250)
-- ShareSheet: 新增内置icon `weapp-qrcode` `wechat-moments` [#4256](https://github.com/youzan/vant-weapp/issues/4256)
+- ShareSheet: 新增内置 icon `weapp-qrcode` `wechat-moments` [#4256](https://github.com/youzan/vant-weapp/issues/4256)
 
 **Features**
 
@@ -44,7 +181,7 @@
 
 **Improvements**
 
-- wxs style 方法支持驼峰变量命名，以便能更好的在wxml中使用 [#4281](https://github.com/youzan/vant-weapp/issues/4281)
+- wxs style 方法支持驼峰变量命名，以便能更好的在 wxml 中使用 [#4281](https://github.com/youzan/vant-weapp/issues/4281)
 
 ### [1.6.9](https://github.com/youzan/vant-weapp/tree/v1.6.9)
 
@@ -53,7 +190,7 @@
 **Bug Fixes**
 
 - DatetimePicker: 修复 动态设置 min-hour min-date 显示不正确 [#4245](https://github.com/youzan/vant-weapp/issues/4245)
-- Tabs: 修复 tab数量较多时滚动距离不正确 [#4202](https://github.com/youzan/vant-weapp/issues/4202)
+- Tabs: 修复 tab 数量较多时滚动距离不正确 [#4202](https://github.com/youzan/vant-weapp/issues/4202)
 - Uploader: 修复 demo 中 beforeRead 报错 [#4235](https://github.com/youzan/vant-weapp/issues/4235)
 
 ### [1.6.9-beta.2](https://github.com/youzan/vant-weapp/tree/v1.6.9-beta.2)
@@ -74,10 +211,9 @@
 
 - Calendar: 增加 first-day-of-week 属性，设置周起始日 [#4211](https://github.com/youzan/vant-weapp/issues/4211)
 - Calendar: 增加 show-range-prompt 属性和 over-range 事件，设置是否展示提示文案 [#4212](https://github.com/youzan/vant-weapp/issues/4212)
-- Icons: 图标库迁移至iconfont.cn [#4219](https://github.com/youzan/vant-weapp/issues/4219)
+- Icons: 图标库迁移至 iconfont.cn [#4219](https://github.com/youzan/vant-weapp/issues/4219)
 - OpenType: 支持 getUserProfile [#4203](https://github.com/youzan/vant-weapp/issues/4203)
 - Panel: 移除 useFooterSlot [#4205](https://github.com/youzan/vant-weapp/issues/4205)
-
 
 ### [1.6.8](https://github.com/youzan/vant-weapp/tree/v1.6.8)
 
